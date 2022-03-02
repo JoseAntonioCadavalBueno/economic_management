@@ -1,5 +1,16 @@
 # economic_management
 Balance sheet manager
+- LATEST VERSION: 1.0
+  - Date: 2022/03/02 
+  - Includes:
+    - a default data base
+    - 1 principal menu
+    - 4 options:
+      - Insert lines
+      - Modify lines
+      - Delete lines
+      - Consult boards
+   - At the moment not include a graphical interface, just the basics utilities to manage a database with python.
 
 - Requeriments:
   -  python 3.9
