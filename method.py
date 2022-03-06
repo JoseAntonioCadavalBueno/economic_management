@@ -84,22 +84,22 @@ def deleteLine(board):
     consultBoard(board)
     
     print("Which one you want to delete?")
-    key = input("code: ")
+    key1 = input("code: ")
     
     if(board == "cost_center"):
-        cod = "code_c"
+        key2 = "code_c"
     elif(board == "accounting account"):
-        cod = "code_a"
+        key2 = "code_a"
     elif(board == "enterprise"):
-        cod = "code_e"
+        key2 = "code_e"
     elif(board == "management"):
-        cod = "id"
+        key2 = "id"
     elif(board == "unit"):
-        cod = "code_u"
+        key2 = "code_u"
     
     try:
         cursor = db.cursor()
-        cursor.execute("DELETE FROM {0} WHERE {1} = '{2}'".format(board, cod, key))
+        cursor.execute("DELETE FROM {0} WHERE {1} = '{2}'".format(board, key2, key1))
         db.commit()
         
         print("Deleted line")
@@ -115,25 +115,25 @@ def modifyLine(board):
     consultBoard(board)
     
     print("Which one you want to modify?")
-    clave = input("code: ")
+    key1 = input("code: ")
     
     if(board == "cost_center"):
-        cod = "code_c"
+        key2 = "code_c"
     elif(board == "accounting account"):
-        cod = "code_a"
+        key2 = "code_a"
     elif(board == "enterprise"):
-        cod = "code_e"
+        key2 = "code_e"
     elif(board == "management"):
-        cod = "id"
+        key2 = "id"
     elif(board == "unit"):
-        cod = "code_u"
+        key2 = "code_u"
     
     value = input("Value you want to modify: ")
     newValue = input("Insert new value: ")
     
     try:
         cursor = db.cursor()
-        cursor.execute("UPDATE {0} SET {1} = '{2}' WHERE {3} = '{4}'".format(board, value, newValue, cod, clave))
+        cursor.execute("UPDATE {0} SET {1} = '{2}' WHERE {3} = '{4}'".format(board, value, newValue, key2, key1))
         db.commit()
         
         print("modified line")
